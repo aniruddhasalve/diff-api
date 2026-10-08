@@ -1,0 +1,9 @@
+[project]
+name = "diff-api"
+version = "0.1.0"
+description = "JSON, text, and file diff REST API"
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
