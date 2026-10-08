@@ -24,3 +24,21 @@ python3 -m unittest discover -s tests -v
 ## License
 
 MIT. Use this codebase as a starting point for your own service.
+
+## Request examples
+
+Start the service with `python3 server.py`, then compare plain text:
+
+```bash
+curl -s http://localhost:8080/diff \
+  -H 'Content-Type: application/json' \
+  -d '{"left":"old line\n","right":"new line\n"}'
+```
+
+For normalized JSON comparison, use `mode: "json"`:
+
+```bash
+curl -s http://localhost:8080/diff \
+  -H 'Content-Type: application/json' \
+  -d '{"mode":"json","left":"{\"a\":1}","right":"{\"a\":2}"}'
+```
